@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% for subreddit in subreddit_list %}
+
+        <h1>{{ subreddit.subreddit }}</h1>
+        <p>{{ subreddit.submission_type }}</p>
+        <p>{{ subreddit.spotify_id }}</p>
+
+    {% endfor %}
+
+
+{% endblock %}

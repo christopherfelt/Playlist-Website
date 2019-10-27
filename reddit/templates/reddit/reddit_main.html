@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+    <form method="post">
+    {% csrf_token %}
+{#    {% bootstrap_form form %}#}
+        <label for="subreddit">Enter Subreddit</label>
+        <input id="subreddit" type="text" name="subreddit" required>
+        <label for="submission_type">Enter Submission Type</label>
+        <input id="submission_type" type="text" name="submission_type" required>
+        <label for="spotify_id">Spotify_ID</label>
+        <input id="spotify_id" type="text" name="spotify_id">
+        <input class="btn btn-primary" type="submit" value="Get List">
+
+
+    </form>
+
+{% endblock %}

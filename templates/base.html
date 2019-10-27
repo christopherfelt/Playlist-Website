@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+
+</head>
+<body>
+
+    <nav class="navbar mynav" role="navigation" id="navbar">
+        <div class="container">
+            <a  class="navbar-brand mynav" href="{% url 'home' %}">MisterPlaylister</a>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+
+                    <li><a href="#">Post</a></li>
+                    <li><a href="{% url 'reddit:reddit_home' %}">Reddit</a></li>
+                    <li><a href="#">Create Group</a></li>
+                    <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                    <li><a href="{% url 'playlists:test_playlist' %}">Playlist Page</a></li>
+                    <li><a href="{% url 'reddit:subreddit_list' %}">Reddit List</a></li>
+
+                {% else %}
+                    <li><a href="#">Groups</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+
+                {% endif %}
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div class="container mycontent">
+
+        {% block content %}
+
+
+
+
+        {% endblock %}
+
+    </div>
+
+
+
+</body>
+</html>

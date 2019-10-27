@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class="container">
+        <h1>Login</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            <input type="submit" class="btn btn-default" value="Login">
+
+        </form>
+
+    </div>
+
+    <p></p>
+    <p></p>
+
+    <div class="container center">
+
+        <a href="{% url 'social:begin' 'spotify' %}" class="btn btn-primary" style="background-color: green; color: white;">Login with Spotify</a>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+
+    <h2>Test Playlist</h2>
+    <ul>
+        <li>Hello World - Hello World</li>
+        <li>Interpol - Success</li>
+        <li>Cawa Boy - Fuck Yeah</li>
+    </ul>
+
+    <form action = "{% url "playlists:add_playlist"%}" method="post">
+
+        {% csrf_token %}
+{#        {% bootstrap_form form %}#}
+
+        <input type="submit" class="btn btn-default" style="background-color: green; color: white;" value="Add Playlist">
+
+    </form>
+
+{% endblock %}
