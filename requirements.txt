@@ -16,7 +16,7 @@ requests-oauthlib==1.2.0
 six==1.12.0
 social-auth-app-django==3.1.0
 social-auth-core==3.1.0
-spotipy==2.4.4
+spotipy==2.22.1
 update-checker==0.16
 urllib3==1.24.1
 websocket-client==0.55.0
